@@ -13,6 +13,7 @@ import { InputTextModule } from 'primeng/inputtext';
 import { StepperModule } from 'primeng/stepper';
 import { IconField, IconFieldModule } from 'primeng/iconfield';
 import { InputIcon, InputIconModule } from 'primeng/inputicon';
+import { RouterLink } from '@angular/router';
 
 @Component({
     selector: 'app-menu-demo',
@@ -39,7 +40,7 @@ import { InputIcon, InputIconModule } from 'primeng/inputicon';
     ],
     template: `
         <div class="card">
-            <div class="font-semibold text-xl mb-4">Menubar</div>
+            <div class="font-semibold text-xl mb-4">Menu</div>
             <p-menubar [model]="nestedMenuItems">
                 <ng-template #end>
                     <p-iconfield>
@@ -132,45 +133,39 @@ import { InputIcon, InputIconModule } from 'primeng/inputicon';
 export class MenuDemo {
     nestedMenuItems = [
         {
-            label: 'Customers',
-            icon: 'pi pi-fw pi-table',
+            label: 'Login',
+            icon: 'pi pi-fw pi-user',
             items: [
                 {
-                    label: 'New',
+                    label: 'Ja sou Cliente',
+                    icon: 'pi pi-fw pi-user',
+                    routerLink: ['/pages/submenu111']
+                },
+                {
+                    label: 'Ja sou Fornecedor',
+                    icon: 'pi pi-fw pi-user',
+                    routerLink: ['/pages/submenu112']
+                }
+            ]
+        },
+        {
+            label: 'Cadastro',
+            icon: 'pi pi-fw pi-user-plus',
+            items: [
+                {
+                    label: 'Quero ser um Cliente!',
                     icon: 'pi pi-fw pi-user-plus',
-                    items: [
-                        {
-                            label: 'Customer',
-                            icon: 'pi pi-fw pi-plus'
-                        },
-                        {
-                            label: 'Duplicate',
-                            icon: 'pi pi-fw pi-copy'
-                        }
-                    ]
+                    routerLink: ['/pages/submenu121']
                 },
                 {
-                    label: 'Edit',
-                    icon: 'pi pi-fw pi-user-edit'
+                    label: 'Quero ser um Fornecedor!',
+                    icon: 'pi pi-fw pi-user-plus',
+                    routerLink: ['/pages/submenu122']
                 }
             ]
         },
         {
-            label: 'Orders',
-            icon: 'pi pi-fw pi-shopping-cart',
-            items: [
-                {
-                    label: 'View',
-                    icon: 'pi pi-fw pi-list'
-                },
-                {
-                    label: 'Search',
-                    icon: 'pi pi-fw pi-search'
-                }
-            ]
-        },
-        {
-            label: 'Shipments',
+            label: 'Pedidos',
             icon: 'pi pi-fw pi-envelope',
             items: [
                 {
@@ -188,23 +183,24 @@ export class MenuDemo {
             ]
         },
         {
-            label: 'Profile',
+            label: 'Perfil',
             icon: 'pi pi-fw pi-user',
             items: [
                 {
-                    label: 'Settings',
+                    label: 'Configurações',
                     icon: 'pi pi-fw pi-cog'
                 },
                 {
-                    label: 'Billing',
+                    label: 'Preferências',
                     icon: 'pi pi-fw pi-file'
+                },
+                {
+                    label: 'Sair',
+                    icon: 'pi pi-fw pi-sign-out'
                 }
             ]
-        },
-        {
-            label: 'Quit',
-            icon: 'pi pi-fw pi-sign-out'
         }
+     
     ];
     breadcrumbHome = { icon: 'pi pi-home', to: '/' };
     breadcrumbItems = [{ label: 'Computer' }, { label: 'Notebook' }, { label: 'Accessories' }, { label: 'Backpacks' }, { label: 'Item' }];

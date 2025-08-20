@@ -22,12 +22,13 @@ export class AppMenu {
         this.model = [
             {
                 label: 'Home',
-                items: [{ label: 'Dashboard', icon: 'pi pi-fw pi-home', routerLink: ['/'] }]
+                items: [{ label: 'Pagina Inicial', icon: 'pi pi-fw pi-home', routerLink: ['/'] },
+                        { label: 'Menu', icon: 'pi pi-fw pi-bars', routerLink: ['/uikit/menu'] }]
             },
             {
                 label: 'UI Components',
                 items: [
-                    { label: 'Form Layout', icon: 'pi pi-fw pi-id-card', routerLink: ['/uikit/formlayout'] },
+                    { label: 'Arthur was here', icon: 'pi pi-fw pi-id-card', routerLink: ['/uikit/formlayout'] },
                     { label: 'Input', icon: 'pi pi-fw pi-check-square', routerLink: ['/uikit/input'] },
                     { label: 'Button', icon: 'pi pi-fw pi-mobile', class: 'rotated-icon', routerLink: ['/uikit/button'] },
                     { label: 'Table', icon: 'pi pi-fw pi-table', routerLink: ['/uikit/table'] },
@@ -103,15 +104,18 @@ export class AppMenu {
                                 label: 'Submenu 1.1',
                                 icon: 'pi pi-fw pi-bookmark',
                                 items: [
-                                    { label: 'Submenu 1.1.1', icon: 'pi pi-fw pi-bookmark' },
-                                    { label: 'Submenu 1.1.2', icon: 'pi pi-fw pi-bookmark' },
+                                   { label: 'Login/cliente', icon: 'pi pi-fw pi-bookmark', routerLink: ['/pages/submenu111'] },
+                                    { label: 'login/fornecedor', icon: 'pi pi-fw pi-bookmark', routerLink: ['/pages/submenu112'] },
                                     { label: 'Submenu 1.1.3', icon: 'pi pi-fw pi-bookmark' }
                                 ]
                             },
                             {
                                 label: 'Submenu 1.2',
                                 icon: 'pi pi-fw pi-bookmark',
-                                items: [{ label: 'Submenu 1.2.1', icon: 'pi pi-fw pi-bookmark' }]
+                                items: [
+                                    { label: 'cadastro/cliente', icon: 'pi pi-fw pi-bookmark', routerLink: ['/pages/submenu121'] },
+                                    { label: 'cadastro/fornecedor', icon: 'pi pi-fw pi-bookmark', routerLink: ['/pages/submenu122'] }
+                                ]
                             }
                         ]
                     },
